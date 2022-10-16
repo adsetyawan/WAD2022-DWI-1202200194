@@ -32,8 +32,8 @@
   display: grid !important;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: min-content;
-  gap: 30px;
-  padding: 30px 60px;
+  gap: 10px;
+  padding: 20px 40px;
 }
 
 .mobil-img {
@@ -42,7 +42,7 @@
 }
 
 .card-body p {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .card-body ul li {
@@ -59,4 +59,3 @@ form {
 form label {
   text-align:  left !important;
 }
-
