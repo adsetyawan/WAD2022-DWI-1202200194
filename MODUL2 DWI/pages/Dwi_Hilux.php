@@ -19,7 +19,7 @@
 					<a class="nav-link text-light" href="Dwi_Home.php">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-light" href="Dwi_Booking.php">Booking</a>
+					<a class="nav-link text-light" href="/MODUL2 DWI/pages/Dwi_Booking.php">Booking</a>
 				</li>
 			</ul>
 		</nav>
@@ -33,10 +33,10 @@
 		<section class="container">
 			<div class="row">
 				<div class="col-6">
-					<img src="2021 Toyota Hilux.png" width="100%" alt="rush">
+					<img src="/MODUL2 DWI/img/2021 Toyota Hilux.png" width="100%" alt="rush">
 				</div>
 				<div class="col-6">
-					<form action="Dwi_resultBooking.php" method="POST">
+					<form action="/MODUL2 DWI/Dwi_resultBooking.php" method="POST">
 						<div class="input-group mb-3">
 							<span class="input-group-text" id="price" name="price" value="1200000">Rp1.200.000,00 / Days</span>
 						</div>

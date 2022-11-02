@@ -16,10 +16,10 @@
         <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="/MODUL2 DWI/Dwi_Home.php">Home</a>
+                    <a class="nav-link text-light" href="Dwi_Home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="./Dwi_Booking.php">Booking</a>
+                    <a class="nav-link text-light" href="/MODUL2 DWI/Dwi_Booking.php">Booking</a>
                 </li>
             </ul>
         </nav>
@@ -33,10 +33,10 @@
         <section class="container">
             <div class="row">
                 <div class="col-6">
-                    <img src="2021 Toyota Hilux.png" id="hide" width="100%" alt="2021 Toyota Hilux">
+                    <img src="/MODUL2 DWI/img/2021 Toyota Hilux.png" id="hide" width="100%" alt="2021 Toyota Hilux">
                 </div>
                 <div class="col-6">
-                    <form action="Dwi_resultBooking.php" method="POST">
+                    <form action="/MODUL2 DWI/Dwi_resultBooking.php" method="POST">
                         <div class="form-control mb-3">
                             <span class="text-secondary">Name</span>
                             <input type="username" class="form-control mb-3" value="DWI_1202200194" id="name" name="name" readonly>
