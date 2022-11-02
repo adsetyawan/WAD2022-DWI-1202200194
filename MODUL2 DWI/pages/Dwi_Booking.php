@@ -16,10 +16,10 @@
         <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="Dwi_Home.php">Home</a>
+                    <a class="nav-link text-light" href="/MODUL2 DWI/Dwi_Home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="Dwi_Booking.php">Booking</a>
+                    <a class="nav-link text-light" href="./Dwi_Booking.php">Booking</a>
                 </li>
             </ul>
         </nav>

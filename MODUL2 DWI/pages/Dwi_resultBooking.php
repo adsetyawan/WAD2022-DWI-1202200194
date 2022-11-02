@@ -18,7 +18,7 @@
                     <a class="nav-link text-light" href="Dwi_Home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="Dwi_resultBooking.php">Booking</a>
+                    <a class="nav-link text-light" href=".pages/Dwi_resultBooking.php">Booking</a>
                 </li>
             </ul>
         </nav>
