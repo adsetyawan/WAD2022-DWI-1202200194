@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./style/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
         <title>Home</title>
     </head>
@@ -15,10 +15,10 @@
         <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="Dwi_Home.php">Home</a>
+                    <a class="nav-link text-light" href=".pages/Dwi_Home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="Dwi_Booking.php">Booking</a>
+                    <a class="nav-link text-light" href=".pages/Dwi_Booking.php">Booking</a>
                 </li>
             </ul>
         </nav>
@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="card" style="width: 20rem;">
-                        <img src="2022 Jeep Gladiator RHD.png" class="card-img-top" alt="car1">
+                        <img src="./img/2022 Jeep Gladiator RHD.png" class="card-img-top" alt="car1">
                         <div class="card-body">
                             <h5 class="card-title text-dark">2022 Jeep Gladiator RHD</h5>
                             <p class="card-text text-secondary">Rp1.800.000,00 / Day</p>
@@ -45,13 +45,13 @@
                             <li class="list-group-item  text-primary">8-Speed AT</li>
                         </ul>
                         <div class="card-body text-center bg-light">
-                            <a href="Dwi_Gladiator.php" class="btn btn-primary card-link w-100">Book Now</a>
+                            <a href="./pages/Dwi_Gladiator.php" class="btn btn-primary card-link w-100">Book Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card" style="width: 20rem;">
-                        <img src="2021 Toyota Hilux.png" class="card-img-top" alt="car1">
+                        <img src="./img/2021 Toyota Hilux.png" class="card-img-top" alt="car1">
                         <div class="card-body">
                             <h5 class="card-title text-dark">2021 Toyota Hilux</h5>
                             <p class="card-text text-secondary">Rp1.200.000,00 / Day</p>
@@ -62,13 +62,13 @@
                             <li class="list-group-item  text-primary">5-Speed Manual</li>
                         </ul>
                         <div class="card-body text-center bg-light">
-                            <a href="Dwi_Hilux.php" class="btn btn-primary card-link w-100">Book Now</a>
+                            <a href="./pages/Dwi_Hilux.php" class="btn btn-primary card-link w-100">Book Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="card" style="width: 20rem;">
-                        <img src="2022 Nissan Navara RHD.png" class="card-img-top" alt="car1">
+                        <img src="./img/2022 Nissan Navara RHD.png" class="card-img-top" alt="car1">
                         <div class="card-body">
                             <h5 class="card-title text-dark">2022 Nissan Navara RHD</h5>
                             <p class="card-text text-secondary">Rp1.600.000,00 / Day</p>
@@ -79,7 +79,7 @@
                             <li class="list-group-item  text-primary">6-Speed Manual</li>
                         </ul>
                         <div class="card-body text-center bg-light">
-                            <a href="Dwi_Navara.php" class="btn btn-primary card-link w-100">Book Now</a>
+                            <a href="./pages/Dwi_Navara.php" class="btn btn-primary card-link w-100">Book Now</a>
                         </div>
                     </div>
                 </div>
