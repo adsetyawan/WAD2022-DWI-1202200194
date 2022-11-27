@@ -12,12 +12,14 @@ $gambar = $_FILES['gambar']['name'];
 
 $target = "../asset/images/";
 
-if (!$img) {
-  return false;
+if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target . $gambar)) {
+  $sql = "UPDATE showroom_dwi_table SET nama_mobil = '$namamobil', pemilik_mobil = '$pemilik', merk_mobil = '$merk', tanggal_beli = '$tanggalbeli', deskripsi = '$desc', foto_mobil = '$gambar', status_pembayaran = '$status' WHERE id_mobil = $id";
+  if (mysqli_query($koneksi, $sql)) {
+    header("location: ../pages/List-Dwi.php");
+  } else {
+    echo "Gagal";
+  }
+} else {
+  echo "Gagal";
 }
-$query = "INSERT INTO showroom_dwi_table (nama_mobil, pemilik_mobil, merk_mobil, tanggal_beli, deskripsi, foto_mobil, status_pembayaran,belum lunas')";
-
-mysqli_query($db, $query);
-
-return mysqli_affected_rows($db)
 ?>
