@@ -1,103 +1,61 @@
-<?php
-require "../config/connector.php";
-session_start();
-if (isset($_COOKIE["email"]) && isset($_COOKIE["password"])) {
-  $email = $_COOKIE["email"];
-  $password = $_COOKIE["password"];
-  $result = mysqli_query($connector, "SELECT * FROM user_dwi WHERE email = '$email'");
-  $data = mysqli_fetch_assoc($result);
-
-  if ($email === $data["email"] && $password === $data["password"]) {
-    $_SESSION["login"] = true;
-    $_SESSION["email"] = $data["email"];
-  }
-}
-
-if (isset($_POST["login"])) {
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  $query = mysqli_query($connector, "SELECT * FROM user_dwi WHERE email='$email'");
-  //cek email  
-  if (mysqli_num_rows($query) === 1) {
-    //cek password
-    $data = mysqli_fetch_assoc($query);
-    if (password_verify($password, $data["password"])) {
-      // set seesion
-      $_SESSION["login"] = true;
-      $_SESSION["email"] = $data["email"];
-      header("Location: ListCar-Ema.php");
-      if (isset($_POST["check"])) {
-        setcookie("email", $data["email"], time() + 86400, "/");
-        setcookie("password", $data["password"], time() + 86400, "/");
-      }
-      header("Location:../index.php");
-    }
-  }
-}
-
-
-
-?>
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"><style>
+      <?php include 'asset/style/style.css'; ?>
+    </style>
+    <title>Login</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <style>
-    <?php include 'asset/style/style.css'; ?>
-  </style>
-</head>
 
-<body>
-  <section id="login">
-    <div class="container-fluid">
-      <div class="row align-items-center">
-        <div class="col-md-6 min-vh-100 left">
-          <img src="../asset/images/loginbg.png" style="object-fit:fill;height:100%;" alt="foto">
-        </div>
-        <div class="col-md-6">
-          <div class="form-login m-auto ps-5">
-            <h2 class="fw-bold mb-4">Login</h2>
-            <form action="" method="post">
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <label class="form-label" for="email">Email address</label>
-                <input type="email" id="email" class="form-control form-control-lg" name="email" placeholder="masukan email" value="<?= isset($_COOKIE["email"]) ? $_COOKIE["email"] : ""; ?>" />
-              </div>
-              <!-- Password input -->
-              <div class="form-outline mb-3">
-                <label class="form-label" for="password">Password</label>
-                <input type="password" id="password" class="form-control form-control-lg" name="password" placeholder="masukan password" value="<?= isset($_COOKIE["password"]) ? $_COOKIE["password"] : ""; ?>" />
-              </div>
-              <div class="d-flex justify-content-between align-items-center">
-                <!-- Checkbox -->
-                <div class="form-check mb-0">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="check" name="check" />
-                  <label class="form-check-label" for="check">
-                    Remember me
-                  </label>
+  <body>
+  <div class="row justify-content-center">
+        <div class="col-4 m-5">
+            <div class="login-container">
+                <div class="split left">
+                    <div class="left">
+                        <img src="../asset/images/2021 Toyota Hilux.png" alt="Pages" style="width: 100%;">
+                    </div>
                 </div>
-                <a href="#!" class="text-body">Forgot password?</a>
-              </div>
+                <div class="split right">
+                    <div class="centered">
+                        <div class="form-container">
+                            <form action="../pages/Home-Dwi.php" method="POST">
+                                <!-- Email -->
+                                <div class="mb-3">
+                                    <label for="Email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Email/User" required>
+                                </div>
+            
+                                <!-- Kata Sandi -->
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Kata Sandi</label>
+                                    <input type="password" class="form-control" name="password" placeholder="******" required>
+                                </div>
+            
+                                <!-- Remember Me -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="rememberme" name="rememberme">
+                                    <label class="form-check-label" for="rememberme">
+                                        Remember Me
+                                    </label>
+                                </div>
+                                <!-- Button -->
+                                <div class="text-center pt-4">
+                                    <button type="submit" name="login" class="btn btn-primary">Login</button>
+                                </div>
 
-              <div class="text-center text-lg-start mt-4 pt-2">
-                <button type="submit" class="btn btn-primary btn-lg" name="login" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                <p class="small fw-bold mt-2 pt-1 mb-0">belum punya akun <a href="Register-Ema.php" class="link-danger">Daftar</a></p>
-              </div>
-            </form>
-          </div>
+                                
+                                <!-- Login -->
+                                <p class="text-center pt-3">Belum punya akun? <a href="../pages/Register-Dwi.php">Daftar</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        </div>
-      </div>
-    </div>
 
-  </section>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
 </html>

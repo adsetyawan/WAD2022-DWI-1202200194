@@ -1,5 +1,5 @@
 <?php
 
-require './pages/Home-Dwi.php'
+require './pages/Login-Dwi.php'
 
 ?>
