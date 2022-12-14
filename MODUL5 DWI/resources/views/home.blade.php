@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row header mt-5">
         <div class="col-md-6 align-self-end">
-            <h1>Selamat Datang Di Showrimage.pngoom Port Numbay</h1>
+            <h1>Selamat Datang Di Showroom Port Numbay</h1>
             <p class="text-muted">Hai tanah ku Papua, Kau tanah lahirku, Ku kasih akan dikau sehingga ajalku.</p>
             <a href="" class="btn btn-primary px-4 mt-4">MyCar</a>
 
